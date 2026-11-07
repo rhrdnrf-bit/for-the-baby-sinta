@@ -1,0 +1,966 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>For Sinta | A Special Day 🌹</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --pink: #e8a4b5;
+        --soft-pink: #f9dce4;
+        --cream: #fff8f0;
+        --wine: #742d43;
+        --deep-wine: #542536;
+        --gold: #c49a58;
+        --light-gold: #e6cf9e;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        font-family: "Poppins", sans-serif;
+        color: var(--deep-wine);
+
+        background:
+          radial-gradient(circle at 10% 10%, #f7d5df 0, transparent 35%),
+          radial-gradient(circle at 90% 90%, #f5d9c9 0, transparent 35%),
+          linear-gradient(135deg, #fff8f0, #fbe8ed, #fff5ed);
+
+        overflow-x: hidden;
+      }
+
+      /* BACKGROUND ORNAMENT */
+
+      body::before,
+      body::after {
+        content: "✧";
+        position: fixed;
+        color: var(--gold);
+        font-size: 150px;
+        opacity: 0.12;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      body::before {
+        top: 20px;
+        left: -45px;
+      }
+
+      body::after {
+        bottom: 10px;
+        right: -45px;
+      }
+
+      /* MUSIC BUTTON */
+
+      .music-button {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+
+        border: 1px solid var(--gold);
+        background: rgba(255, 248, 240, 0.92);
+        color: var(--wine);
+
+        padding: 11px 18px;
+        border-radius: 30px;
+
+        cursor: pointer;
+        font-family: "Poppins", sans-serif;
+        font-size: 12px;
+
+        box-shadow: 0 5px 20px #742d4320;
+        backdrop-filter: blur(10px);
+        transition: 0.3s;
+      }
+
+      .music-button:hover {
+        background: var(--wine);
+        color: white;
+        transform: translateY(-3px);
+      }
+
+      /* PAGE */
+
+      .page {
+        display: none;
+        min-height: 100vh;
+        width: 100%;
+
+        padding: 85px 20px 45px;
+
+        position: relative;
+        z-index: 1;
+
+        align-items: center;
+        justify-content: center;
+
+        animation: pageEnter 0.8s ease;
+      }
+
+      .page.active {
+        display: flex;
+      }
+
+      @keyframes pageEnter {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .container {
+        width: 100%;
+        max-width: 850px;
+        margin: auto;
+        text-align: center;
+        position: relative;
+      }
+
+      /* TOP LABEL */
+
+      .top-label {
+        color: var(--gold);
+        letter-spacing: 5px;
+        font-size: 11px;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+      }
+
+      /* ROYAL ROSE ILLUSTRATION */
+
+      .rose-emblem {
+        width: 75px;
+        height: 75px;
+        display: block;
+        margin: 12px auto;
+
+        filter: drop-shadow(0 5px 5px #742d4320);
+      }
+
+      .rose-emblem.large {
+        width: 100px;
+        height: 100px;
+      }
+
+      /* GOLD ORNAMENT */
+
+      .ornament {
+        color: var(--gold);
+        font-size: 17px;
+        letter-spacing: 5px;
+
+        margin: 24px auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .ornament::before,
+      .ornament::after {
+        content: "";
+        width: 65px;
+        height: 1px;
+
+        background: linear-gradient(to right, transparent, var(--gold));
+      }
+
+      .ornament::after {
+        transform: rotate(180deg);
+      }
+
+      /* PAGE 1 */
+
+      .opening-card {
+        max-width: 680px;
+        margin: auto;
+
+        padding: 65px 30px;
+
+        border: 1px solid #c49a5870;
+        border-radius: 180px 180px 35px 35px;
+
+        background: rgba(255, 250, 245, 0.82);
+
+        box-shadow: 0 20px 60px #742d4315;
+
+        position: relative;
+        backdrop-filter: blur(10px);
+      }
+
+      .opening-card::before {
+        content: "";
+        position: absolute;
+        inset: 12px;
+
+        border: 1px solid #c49a5870;
+        border-radius: 170px 170px 27px 27px;
+
+        pointer-events: none;
+      }
+
+      .opening-card::after,
+      .closing-card::after {
+        content: "✧";
+        position: absolute;
+
+        right: 25px;
+        bottom: 18px;
+
+        color: var(--gold);
+        font-size: 28px;
+        opacity: 0.8;
+
+        pointer-events: none;
+      }
+
+      .script-title {
+        font-family: "Great Vibes", cursive;
+        font-size: clamp(55px, 10vw, 90px);
+
+        color: var(--wine);
+        font-weight: normal;
+        line-height: 1.2;
+      }
+
+      .opening-card p {
+        font-size: 14px;
+        line-height: 2;
+
+        max-width: 450px;
+        margin: 20px auto;
+
+        color: #815364;
+      }
+
+      .subtitle {
+        font-family: "Playfair Display", serif;
+        font-size: 18px;
+
+        color: var(--gold);
+        letter-spacing: 2px;
+      }
+
+      /* BUTTON */
+
+      .main-button {
+        display: inline-block;
+        margin-top: 25px;
+
+        padding: 14px 32px;
+
+        background: linear-gradient(135deg, #a84d69, #742d43);
+
+        color: white;
+
+        border: 1px solid var(--gold);
+        border-radius: 35px;
+
+        font-family: "Poppins", sans-serif;
+        font-size: 12px;
+        letter-spacing: 2px;
+
+        cursor: pointer;
+
+        box-shadow: 0 8px 25px #742d4330;
+        transition: 0.3s;
+      }
+
+      .main-button:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px #742d4340;
+      }
+
+      /* PAGE 2 PHOTO */
+
+      .photo-card {
+        max-width: 650px;
+        margin: auto;
+
+        padding: 30px;
+
+        background: rgba(255, 250, 245, 0.9);
+
+        border: 1px solid var(--gold);
+        box-shadow: 0 20px 60px #742d4320;
+
+        border-radius: 12px;
+        position: relative;
+      }
+
+      .photo-frame {
+        max-width: 390px;
+        margin: 25px auto;
+
+        padding: 12px;
+
+        border: 2px solid var(--gold);
+        outline: 1px solid #c49a5880;
+        outline-offset: 5px;
+
+        background: #fff;
+
+        box-shadow: 0 12px 35px #742d4320;
+      }
+
+      .photo-frame img {
+        display: block;
+        width: 100%;
+        max-height: 470px;
+
+        object-fit: cover;
+
+        border: 1px solid #ead3c1;
+      }
+
+      .photo-caption {
+        font-family: "Great Vibes", cursive;
+        color: var(--wine);
+
+        font-size: 43px;
+        margin-top: 25px;
+      }
+
+      .description {
+        font-size: 13px;
+        line-height: 2;
+
+        color: #815364;
+
+        margin: 12px auto;
+        max-width: 470px;
+      }
+
+      /* PAGE 3 LETTER */
+
+      .letter-card {
+        max-width: 760px;
+        margin: auto;
+
+        padding: 45px 35px;
+
+        background: linear-gradient(145deg, #fffaf2, #fff0f1);
+
+        border: 1px solid var(--gold);
+        outline: 1px solid #c49a5850;
+        outline-offset: 7px;
+
+        box-shadow: 0 20px 60px #742d4320;
+
+        position: relative;
+        text-align: left;
+      }
+
+      .letter-card::before {
+        content: "✿";
+
+        position: absolute;
+        top: -25px;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        font-size: 36px;
+        color: var(--gold);
+
+        background: var(--cream);
+        padding: 0 12px;
+      }
+
+      .letter-heading {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(25px, 5vw, 36px);
+
+        color: var(--wine);
+        text-align: center;
+
+        margin-bottom: 20px;
+      }
+
+      .arabic {
+        font-family: serif;
+        font-size: 23px;
+        line-height: 2;
+
+        color: var(--wine);
+        text-align: center;
+        direction: rtl;
+
+        margin: 20px 0;
+      }
+
+      .letter-card p {
+        font-size: 13px;
+        line-height: 2.1;
+
+        color: #684353;
+
+        margin-bottom: 17px;
+        text-align: justify;
+      }
+
+      .letter-divider {
+        text-align: center;
+        color: var(--gold);
+        letter-spacing: 8px;
+
+        margin: 25px 0;
+      }
+
+      /* PAGE 4 CLOSING */
+
+      .closing-card {
+        max-width: 680px;
+        margin: auto;
+
+        padding: 60px 30px;
+
+        border: 1px solid var(--gold);
+        border-radius: 35px;
+
+        background: rgba(255, 250, 245, 0.88);
+
+        box-shadow: 0 20px 60px #742d4320;
+
+        position: relative;
+      }
+
+      .closing-title {
+        font-family: "Great Vibes", cursive;
+        color: var(--wine);
+
+        font-size: clamp(50px, 9vw, 78px);
+        font-weight: normal;
+
+        margin: 15px 0;
+      }
+
+      .closing-card p {
+        font-size: 14px;
+        line-height: 2;
+
+        color: #815364;
+
+        max-width: 480px;
+        margin: 15px auto;
+      }
+
+      .final-wish {
+        font-family: "Playfair Display", serif;
+        font-size: 19px !important;
+
+        color: var(--wine) !important;
+        line-height: 1.9 !important;
+
+        padding: 20px;
+
+        border-top: 1px solid #c49a5880;
+        border-bottom: 1px solid #c49a5880;
+      }
+
+      /* NAVIGATION */
+
+      .navigation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        gap: 13px;
+        margin-top: 35px;
+      }
+
+      .nav-dot {
+        width: 9px;
+        height: 9px;
+
+        border-radius: 50%;
+        border: 1px solid var(--wine);
+
+        background: transparent;
+        cursor: pointer;
+
+        transition: 0.3s;
+      }
+
+      .nav-dot.active {
+        width: 28px;
+        border-radius: 20px;
+
+        background: var(--wine);
+      }
+
+      /* FALLING ROSE PETALS */
+
+      .petal {
+        position: fixed;
+        top: -30px;
+
+        width: 12px;
+        height: 19px;
+
+        border-radius: 2px 90% 2px 90%;
+
+        background: linear-gradient(135deg, #f4c4cf, #a94360 75%);
+
+        box-shadow: 0 1px 5px #742d4320;
+
+        z-index: 500;
+        pointer-events: none;
+
+        animation: falling linear forwards;
+      }
+
+      @keyframes falling {
+        0% {
+          transform: translateY(-20px) rotate(0deg);
+          opacity: 0;
+        }
+
+        15% {
+          opacity: 0.65;
+        }
+
+        100% {
+          transform: translateY(110vh) rotate(420deg);
+          opacity: 0;
+        }
+      }
+
+      /* FOOTER */
+
+      .footer {
+        color: #a57a83;
+
+        font-size: 10px;
+        letter-spacing: 2px;
+
+        margin-top: 25px;
+      }
+
+      /* MOBILE */
+
+      @media (max-width: 600px) {
+        .page {
+          padding: 85px 17px 35px;
+        }
+
+        .opening-card {
+          padding: 55px 20px;
+        }
+
+        .photo-card {
+          padding: 20px;
+        }
+
+        .photo-frame {
+          max-width: 100%;
+        }
+
+        .letter-card {
+          padding: 40px 22px;
+        }
+
+        .letter-card p {
+          font-size: 12px;
+        }
+
+        .closing-card {
+          padding: 45px 20px;
+        }
+
+        .music-button {
+          top: 12px;
+          right: 12px;
+
+          padding: 9px 13px;
+        }
+
+        .rose-emblem.large {
+          width: 85px;
+          height: 85px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ROYAL ROSE SVG -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      style="position: absolute; width: 0; height: 0; overflow: hidden"
+    >
+      <symbol id="royalRose" viewBox="0 0 100 100">
+        <defs>
+          <linearGradient id="roseColor" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#d77b91" />
+            <stop offset="50%" stop-color="#a94360" />
+            <stop offset="100%" stop-color="#64243b" />
+          </linearGradient>
+        </defs>
+
+        <g
+          fill="none"
+          stroke="url(#roseColor)"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="
+                M50 47
+                C32 34 39 15 52 20
+                C65 9 78 28 63 43
+                C77 45 76 63 59 65
+                C47 74 29 60 40 47
+                C31 43 34 31 43 30
+                C49 26 58 32 55 40
+                C65 32 70 45 61 51
+                C53 58 43 52 47 43
+            "
+          />
+
+          <path d="M49 64 C47 76 45 84 42 94" />
+
+          <path
+            d="
+                M48 75
+                C34 64 24 72 32 83
+                C40 88 46 82 48 75Z
+            "
+          />
+
+          <path
+            d="
+                M45 84
+                C58 69 71 76 65 87
+                C57 94 49 90 45 84Z
+            "
+          />
+        </g>
+
+        <g fill="none" stroke="#c49a58" stroke-width="1.5">
+          <path d="M50 47 C43 40 48 31 55 34 C63 37 59 47 52 49" />
+
+          <path d="M32 83 L44 78" />
+
+          <path d="M65 87 L48 85" />
+        </g>
+
+        <g fill="#c49a58">
+          <circle cx="51" cy="15" r="1.5" />
+          <circle cx="72" cy="29" r="1.2" />
+        </g>
+      </symbol>
+    </svg>
+
+    <!-- MUSIC -->
+    <audio id="music" loop>
+      <source src="music/lagu-arabic.mp3" type="audio/mpeg" />
+    </audio>
+
+    <button class="music-button" onclick="toggleMusic()" id="musicButton">
+      ♫ Play Music
+    </button>
+
+    <!-- PAGE 1 -->
+    <section class="page active" id="page1">
+      <div class="container">
+        <div class="opening-card">
+          <svg class="rose-emblem large">
+            <use href="#royalRose"></use>
+          </svg>
+
+          <div class="top-label">A Special Day For Someone Special</div>
+
+          <h1 class="script-title">Hello, Sinta</h1>
+
+          <div class="ornament">✧ ❖ ♡ ❖ ✧</div>
+
+          <h2 class="subtitle">A Little Story For You</h2>
+
+          <p>
+            Ada seseorang yang sangat spesial, dan hari ini adalah hari
+            istimewanya. Aku ingin memberikan sesuatu yang sederhana, tetapi
+            penuh dengan makna.
+          </p>
+
+          <p>This little website is made especially for you.</p>
+
+          <button class="main-button" onclick="goToPage(2)">
+            OPEN MY STORY ♡
+          </button>
+        </div>
+
+        <div class="navigation">
+          <button class="nav-dot active" onclick="goToPage(1)"></button>
+
+          <button class="nav-dot" onclick="goToPage(2)"></button>
+
+          <button class="nav-dot" onclick="goToPage(3)"></button>
+
+          <button class="nav-dot" onclick="goToPage(4)"></button>
+        </div>
+
+        <div class="footer">MADE WITH LOVE ♡</div>
+      </div>
+    </section>
+
+    <!-- PAGE 2 -->
+    <section class="page" id="page2">
+      <div class="container">
+        <div class="top-label">A Beautiful Memory</div>
+
+        <div class="photo-card">
+          <div class="ornament">✧ ❖ ✧</div>
+
+          <svg class="rose-emblem">
+            <use href="#royalRose"></use>
+          </svg>
+
+          <h2 class="letter-heading">A Beautiful Sinta</h2>
+
+          <div class="photo-frame">
+            <img src="images/foto-sinta.jpeg" alt="Foto Sinta" />
+          </div>
+
+          <h2 class="photo-caption">My Beautiful Girl</h2>
+
+          <p class="description">
+            Dari sekian banyak hal indah di dunia, kehadiran kamu menjadi salah
+            satu hal yang paling aku syukuri.
+          </p>
+
+          <div class="ornament">♡ ✧ ♡</div>
+
+          <button class="main-button" onclick="goToPage(3)">
+            READ MY LETTER ♡
+          </button>
+        </div>
+
+        <div class="navigation">
+          <button class="nav-dot" onclick="goToPage(1)"></button>
+
+          <button class="nav-dot active" onclick="goToPage(2)"></button>
+
+          <button class="nav-dot" onclick="goToPage(3)"></button>
+
+          <button class="nav-dot" onclick="goToPage(4)"></button>
+        </div>
+
+        <div class="footer">A MEMORY TO TREASURE</div>
+      </div>
+    </section>
+
+    <!-- PAGE 3 -->
+    <section class="page" id="page3">
+      <div class="container">
+        <div class="top-label">A Letter From My Heart</div>
+
+        <div class="letter-card">
+          <h2 class="letter-heading">Happy Birthday, Sayang 🤍</h2>
+
+          <div class="letter-divider">✧ ♡ ✧</div>
+
+          <div class="arabic">
+            بَارَكَ اللَّهُ فِي عُمْرِكِ، وَأَطَالَ اللَّهُ فِي عُمْرِكِ
+            بِالطَّاعَةِ وَالْبَرَكَةِ.
+          </div>
+
+          <p>
+            Barakallah fii umrik, Sayang 🤍 Selamat bertambah usia... Semoga di
+            umur yang baru ini, setiap langkah kamu selalu dipenuhi kebaikan,
+            kebahagiaan, dan keberkahan. 🤍
+          </p>
+
+          <p>
+            Aku bersyukur kepada Allah karna telah mempertemukan aku dengan
+            seorang kekasih sepertimu, terima kasih sudah hadir, bertahan, dan
+            mau menemani perjalanan hidup aku sampai sejauh ini. Kehadiran kamu
+            menjadi salah satu hal yang sangat aku syukuri.
+          </p>
+
+          <p>
+            Semoga Allah selalu menjaga hati kamu untuk aku, melapangkan segala
+            urusanmu, mengabulkan doa-doa baikmu, memberikan kesehatan, serta
+            menggantikan setiap kesedihanmu dengan kebahagiaan, dan semoga Allah
+            mengabulkan segala hajat hajat kamu. Jangan pernah lelah untuk
+            tumbuh dan menjadi pribadi yang lebih baik. Tetap kuat, tetap
+            semangat, dan jangan menyerah pada impian kamu sayang perjalanan
+            kamu masih panjang, semoga akhirnya adalah kebahagian. 🤍
+          </p>
+
+          <p>
+            Semoga di setiap pertambahan usia kamu, semakin banyak hal baik yang
+            Allah hadirkan. Aamiin ya Rabbal 'alamin. 🤍🌹
+          </p>
+
+          <div class="letter-divider">✧ ❖ ✧</div>
+
+          <div style="text-align: center">
+            <button class="main-button" onclick="goToPage(4)">
+              ONE MORE WISH ♡
+            </button>
+          </div>
+        </div>
+
+        <div class="navigation">
+          <button class="nav-dot" onclick="goToPage(1)"></button>
+
+          <button class="nav-dot" onclick="goToPage(2)"></button>
+
+          <button class="nav-dot active" onclick="goToPage(3)"></button>
+
+          <button class="nav-dot" onclick="goToPage(4)"></button>
+        </div>
+
+        <div class="footer">WORDS FROM THE HEART</div>
+      </div>
+    </section>
+
+    <!-- PAGE 4 -->
+    <section class="page" id="page4">
+      <div class="container">
+        <div class="closing-card">
+          <svg class="rose-emblem large">
+            <use href="#royalRose"></use>
+          </svg>
+
+          <div class="top-label">One More Wish For Us</div>
+
+          <h1 class="closing-title">For Our Future</h1>
+
+          <div class="ornament">✧ ❖ ♡ ❖ ✧</div>
+
+          <p>
+            Terima kasih sudah menjadi bagian dari cerita hidup aku. Semoga kita
+            selalu diberikan kesempatan untuk menciptakan lebih banyak kenangan
+            indah bersama.
+          </p>
+
+          <p class="final-wish">
+            Semoga hubungan kita ini tetap bertahan sampai ke jenjang pernikahan
+            🤍🌹
+          </p>
+
+          <h2 class="subtitle">Happy Birthday, Sinta! ❤️</h2>
+
+          <p>
+            May your days always be filled with happiness, love, and endless
+            blessings.
+          </p>
+
+          <div class="ornament">✧ ♡ ✧</div>
+
+          <h2 class="script-title" style="font-size: 55px">With Love</h2>
+
+          <button class="main-button" onclick="goToPage(1)">
+            ↻ READ AGAIN
+          </button>
+        </div>
+
+        <div class="navigation">
+          <button class="nav-dot" onclick="goToPage(1)"></button>
+
+          <button class="nav-dot" onclick="goToPage(2)"></button>
+
+          <button class="nav-dot" onclick="goToPage(3)"></button>
+
+          <button class="nav-dot active" onclick="goToPage(4)"></button>
+        </div>
+
+        <div class="footer">FOREVER A SPECIAL STORY ♡</div>
+      </div>
+    </section>
+
+    <script>
+      /* PAGE NAVIGATION */
+
+      function goToPage(number) {
+        document.querySelectorAll(".page").forEach((page) => {
+          page.classList.remove("active");
+        });
+
+        document.getElementById("page" + number).classList.add("active");
+
+        document.querySelectorAll(".navigation").forEach((nav) => {
+          const dots = nav.querySelectorAll(".nav-dot");
+
+          dots.forEach((dot, index) => {
+            dot.classList.toggle("active", index === number - 1);
+          });
+        });
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+
+      /* MUSIC CONTROL */
+
+      const music = document.getElementById("music");
+
+      const musicButton = document.getElementById("musicButton");
+
+      async function toggleMusic() {
+        if (music.paused) {
+          try {
+            await music.play();
+
+            musicButton.innerHTML = "♫ Pause Music";
+          } catch (error) {
+            alert("Musik belum bisa diputar. Periksa file MP3 kamu.");
+          }
+        } else {
+          music.pause();
+
+          musicButton.innerHTML = "♫ Play Music";
+        }
+      }
+
+      /* ELEGANT FALLING PETALS */
+
+      function createPetal() {
+        const petal = document.createElement("div");
+
+        petal.className = "petal";
+
+        petal.style.left = Math.random() * 100 + "vw";
+
+        petal.style.animationDuration = 7 + Math.random() * 6 + "s";
+
+        petal.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+        document.body.appendChild(petal);
+
+        setTimeout(() => {
+          petal.remove();
+        }, 14000);
+      }
+
+      setInterval(createPetal, 1300);
+    </script>
+  </body>
+</html>
